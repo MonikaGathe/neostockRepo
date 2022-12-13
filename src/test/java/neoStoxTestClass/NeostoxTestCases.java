@@ -1,8 +1,6 @@
-
 package neoStoxTestClass;
 
 import java.io.IOException;
-import java.time.Duration;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -17,6 +15,8 @@ import neoStoxPom.PasswordPage;
 import neoStoxPom.SignINPage;
 import neostox_Base.Base;
 import neostox_Utility.Utility;
+
+public class NeostoxTestCases {
 
 @Listeners(listenersStudy.Listener.class)
 
@@ -55,6 +55,20 @@ public class NeoStoxValidatingBalance extends Base{
 	 home.getBalance(driver);
 	 
   }
+  @Test
+  public void checkEquitiesTextField() throws IOException
+  {
+	  home.searchEquities(driver,Utility.readDataFromPropertyFile("equity"));
+      
+  }
+  
+  @Test
+  public void validatingUserName() throws IOException, InterruptedException
+  {   
+	  Thread.sleep(10000);
+	  Assert.assertEquals(home.getUserName(driver), Utility.readDataFromPropertyFile("expun"));
+	 
+  }
  @AfterMethod
   public void logOutneostox() throws InterruptedException, IOException
   {
@@ -68,4 +82,5 @@ public class NeoStoxValidatingBalance extends Base{
 	  Thread.sleep(3000);
 	  driver.close();
   }
+}
 }
