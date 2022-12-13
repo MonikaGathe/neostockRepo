@@ -10,13 +10,13 @@ import neoStoxUtilityClass.Utility;
 public class Base 
 {    
 	// branch code
+ // new branch code is added
 	
-	protected static WebDriver  driver ;
+=======
+protected static WebDriver  driver ;
  
 	public void lonchBrowser() throws IOException, InterruptedException
 	{
-		// new master branch
-		
 		System.setProperty("webdriver.chrome.driver", "C:\\selenium\\chromedriver.exe");
 		
 		driver = new ChromeDriver();
@@ -30,8 +30,6 @@ public class Base
 		Utility.waitMethod(driver, 1000);
 	
 		Thread.sleep(1000);
-	
-	
 	
 	
 	}
