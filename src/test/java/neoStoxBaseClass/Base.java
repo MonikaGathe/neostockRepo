@@ -31,7 +31,5 @@ public class Base
 		Thread.sleep(1000);
 	
 	
-	
-	
 	}
 }
